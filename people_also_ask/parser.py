@@ -18,7 +18,8 @@ def extract_related_questions(document: BeautifulSoup) -> List[str]:
     get_text = attrgetter("text")
     if not div_questions:
         return []
-    questions = list(map(get_text, div_questions))
+    questions = [t.select_one('div')['data-q'] for t in div_questions]
+    # questions = list(map(get_text, div_questions))
     return questions
 
 
