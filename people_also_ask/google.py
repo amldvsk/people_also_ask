@@ -79,6 +79,7 @@ def generate_related_questions(text: str) -> Generator[str, None, None]:
     :param str text: text to search
     """
     questions = set(_get_related_questions(text))
+    print(questions)
     searched_text = set(text)
     while questions:
         text = questions.pop()
