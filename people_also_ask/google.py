@@ -105,6 +105,8 @@ def get_related_questions(text: str, max_nb_questions: Optional[int] = None):
             break
         questions.add(question)
         nb_question_regenerated += 1
+    print('questions')
+    print(questions)
     return list(questions)
 
 
