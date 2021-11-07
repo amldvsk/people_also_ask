@@ -20,7 +20,7 @@ from people_also_ask.exceptions import (
 from people_also_ask.tools import CallingSemaphore
 
 
-URL = "https://www.google.com/search"
+URL = "https://www.google.co.il/search"
 HEADERS = {
     'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
     " AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -114,6 +114,7 @@ def get_answer(question: str) -> Dict[str, Any]:
     :param str question: asked question
     """
     document = search(question)
+    print(document)
     related_questions = extract_related_questions(document)
     featured_snippet = get_featured_snippet_parser(
             question, document)
